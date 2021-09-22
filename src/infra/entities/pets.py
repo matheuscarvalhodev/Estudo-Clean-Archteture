@@ -6,11 +6,10 @@ from src.infra.config import Base
 class AnimalTypes(enum.Enum):
     """Defining Anymals Types"""
 
-    dog = ("dog",)
-    cat = ("cat",)
-    fish = ("fish",)
+    dog = "dog",
+    cat = "cat",
+    fish = "fish",
     turtle = "turtle"
-
 
 class Pets(Base):
     """Pets Entity"""
