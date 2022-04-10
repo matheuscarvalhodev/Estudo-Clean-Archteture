@@ -1,6 +1,5 @@
 from sqlalchemy import Column, String, Integer
 from src.infra.config import Base
-from sqlalchemy.orm import relationship
 
 
 class Users(Base):
@@ -8,10 +7,11 @@ class Users(Base):
 
     __tablename__ = "users"
 
-    id = Column(Integer, primary_key=True)
-    name = Column(String, nullable=False, unique=True)
-    password = Column(String, nullable=False)
-    id_pet = relationship("Pets")
+    id = Column(Integer, primary_key = True) 
+    public_id = Column(String(50), unique = True) 
+    name = Column(String(100))
+    user = Column(String(50), unique = True)
+    password = Column(String(80))
 
     def __rep__(self):
         return f"User [name={self.name}]"
